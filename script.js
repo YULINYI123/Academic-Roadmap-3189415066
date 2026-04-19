@@ -141,9 +141,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const textSpan = document.createElement('span');
                 textSpan.innerText = task.text;
+                textSpan.style.flex = '1';
+                textSpan.style.cursor = 'pointer';
+                textSpan.title = 'Click to edit';
+                
+                // Edit functionality
+                textSpan.addEventListener('click', () => {
+                    const newText = prompt('Edit task:', task.text);
+                    if (newText && newText.trim() !== '') {
+                        task.text = newText.trim();
+                        textSpan.innerText = task.text;
+                        saveProgress(item.subject, currentRoadmap);
+                    }
+                });
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'delete-task-btn';
+                deleteBtn.innerText = '✕';
+                deleteBtn.title = 'Delete task';
+                deleteBtn.addEventListener('click', () => {
+                    item.tasks.splice(tIndex, 1);
+                    saveProgress(item.subject, currentRoadmap);
+                    renderRoadmap(currentRoadmap);
+                    updateProgress();
+                });
                 
                 li.appendChild(checkbox);
                 li.appendChild(textSpan);
+                li.appendChild(deleteBtn);
                 list.appendChild(li);
             });
             
@@ -240,11 +265,14 @@ document.addEventListener('DOMContentLoaded', () => {
         let totalCredits = 0;
 
         courses.forEach(course => {
-            totalPoints += parseFloat(course.grade) * parseInt(course.credits);
-            totalCredits += parseInt(course.credits);
+            const gradeValue = parseFloat(course.grade);
+            const creditValue = parseInt(course.credits);
+            
+            totalPoints += gradeValue * creditValue;
+            totalCredits += creditValue;
         });
 
-        const gpa = totalPoints / totalCredits;
+        const gpa = totalCredits === 0 ? 0 : (totalPoints / totalCredits);
         gpaScoreDisplay.innerText = gpa.toFixed(2);
     }
 
@@ -280,17 +308,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addCourseBtn.addEventListener('click', () => {
         const name = courseNameInput.value.trim();
-        const credits = courseCreditsInput.value;
+        const credits = courseCreditsInput.value.trim();
         const grade = courseGradeInput.value;
 
-        if (!name || !credits) return;
+        // Validate inputs
+        if (!name || !credits || isNaN(parseInt(credits)) || parseInt(credits) < 1) {
+            alert('Please enter a valid course name and credits (1-10)');
+            return;
+        }
 
-        courses.push({ name, credits, grade });
+        // Create course object
+        const newCourse = {
+            name: name,
+            credits: parseInt(credits),
+            grade: parseFloat(grade)
+        };
+
+        courses.push(newCourse);
         saveCourses();
         renderCourses();
 
+        // Clear inputs
         courseNameInput.value = '';
         courseCreditsInput.value = '';
+        courseGradeInput.value = '4.0';
     });
 
     // Demo Logic
