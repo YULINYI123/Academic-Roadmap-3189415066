@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Roadmap Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-top">
+                <div class="logo">
+                    <span class="icon">🎓</span>
+                    <h1>Academic Roadmap Generator</h1>
+                </div>
+                <button id="theme-toggle" class="icon-btn">🌓</button>
+            </div>
+            <p class="subtitle">Design your learning journey with precision.</p>
+        </header>
+
+        <main>
+            <div class="quick-help">
+                <span class="badge">Tip</span> 
+                Type a subject below or click <button id="load-roadmap-demo" class="link-btn">Example: Web Development</button>
+            </div>
+            
+            <nav class="tab-nav">
+                <button class="tab-btn active" data-tab="roadmap">Roadmap Generator</button>
+                <button class="tab-btn" data-tab="planner">Semester Planner</button>
+            </nav>
+
+            <!-- Roadmap Section -->
+            <section id="roadmap-view" class="tab-content active">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="subject-input">What do you want to learn?</label>
+                        <input type="text" id="subject-input" placeholder="e.g. Quantum Computing, Data Science..." autocomplete="off">
+                    </div>
+                    <button id="generate-btn">Generate Roadmap</button>
+                </div>
+
+                <div id="roadmap-dashboard" class="roadmap-dashboard hidden">
+                    <div class="stat-box">
+                        <span class="stat-label">Progress</span>
+                        <div class="progress-bar-container">
+                            <div id="total-progress" class="progress-fill" style="width: 30%"></div>
+                        </div>
+                        <span id="progress-text" class="stat-value">30%</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">Completed Tasks</span>
+                        <span id="tasks-count" class="stat-value">4 / 12</span>
+                    </div>
+                </div>
+
+                <section id="roadmap-section" class="hidden">
+                    <div class="roadmap-header">
+                        <h2 id="roadmap-title">Roadmap for [Subject]</h2>
+                        <button id="export-btn" class="secondary-btn">
+                            <span class="btn-icon">📅</span> Export (.ics)
+                        </button>
+                    </div>
+                    <div id="roadmap-content" class="roadmap-grid"></div>
+                </section>
+            </section>
+
+            <!-- Semester Planner Section -->
+            <section id="planner-view" class="tab-content">
+                <div class="input-section">
+                    <div class="planner-controls">
+                        <h3>Semester GPA Calculator</h3>
+                        <div class="planner-actions">
+                            <button id="load-planner-demo" class="secondary-btn small">Load Sample Semester</button>
+                            <p class="gpa-display">GPA: <span id="gpa-score">0.00</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="course-input-row">
+                        <input type="text" id="course-name" placeholder="Course Name">
+                        <input type="number" id="course-credits" placeholder="Credits" min="1" max="10">
+                        <select id="course-grade">
+                            <option value="4.0">A (4.0)</option>
+                            <option value="3.7">A- (3.7)</option>
+                            <option value="3.3">B+ (3.3)</option>
+                            <option value="3.0">B (3.0)</option>
+                            <option value="2.7">B- (2.7)</option>
+                            <option value="2.3">C+ (2.3)</option>
+                            <option value="2.0">C (2.0)</option>
+                            <option value="0.0">F (0.0)</option>
+                        </select>
+                        <button id="add-course-btn">Add Course</button>
+                    </div>
+
+                    <div class="course-list-container">
+                        <table class="course-table">
+                            <thead>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Credits</th>
+                                    <th>Grade</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="course-list-body">
+                                <!-- Courses will be added here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Academic Roadmap Generator. All rights reserved.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
