@@ -13,7 +13,7 @@ Modern learners are often overwhelmed by the sheer volume of information availab
 - **Premium UI/UX**: Clean, responsive design with glassmorphism and smooth animations.
 
 ## Try Live
-[YULINYI123.github.io/Academic-Roadmap-3189415066]
+https://YULINYI123.github.io/Academic-Roadmap-3189415066
 
 ## How to Build/Run
 1. Clone the repository.
