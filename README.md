@@ -21,8 +21,9 @@ Modern learners are often overwhelmed by the sheer volume of information availab
 - **Local Storage**: All data persists in your browser; no account needed
 
 ## 📸 Screenshots
-> **[将在此处添加项目截图]**  
-> 显示内容：主界面、路线图生成、GPA计算、任务编辑示例
+![Academic Roadmap Generator main interface](screenshot.png)
+
+The screenshot shows the roadmap generator interface with academic templates, generated weekly tasks, progress tracking, and the GPA calculator panel.
 
 ## 🚀 How to Use
 
@@ -51,7 +52,7 @@ See [GitHub_Actions_验证指南.md](GitHub_Actions_验证指南.md) for:
 ├── style.css              # Glassmorphism design (550+ lines)
 ├── README.md              # This file
 ├── .github/workflows/deploy.yml  # Automatic GitHub Pages deployment
-└── [Screenshot files]     # Project screenshots
+└── screenshot.png         # Project screenshot for README
 ```
 
 ## 🔧 Technology Stack
