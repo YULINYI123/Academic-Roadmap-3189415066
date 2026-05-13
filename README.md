@@ -3,7 +3,7 @@
 Academic Roadmap Generator is a minimalist, Notion-inspired web application designed to help students and lifelong learners bridge the gap between "wanting to learn" and "knowing how to learn." It generates structured, week-by-week learning paths for any subject and allows users to export these goals directly to their calendars.
 
 ## 🌐 Live Demo
-**📍 点击这里体验在线版本：** https://3189415066.github.io/Academic-Roadmap-3189415066/
+**📍 点击这里体验在线版本：** https://YULINYI123.github.io/Academic-Roadmap-3189415066/
 
 > **使用说明**：打开链接后，选择左侧的学位类型（如 Computer Science），系统自动生成 4 周学习计划。无需账号，所有数据存储在浏览器本地。
 
@@ -28,12 +28,12 @@ The screenshot shows the roadmap generator interface with academic templates, ge
 ## 🚀 How to Use
 
 ### Online (Recommended)
-Simply visit: https://3189415066.github.io/Academic-Roadmap-3189415066/
+Simply visit: https://YULINYI123.github.io/Academic-Roadmap-3189415066/
 
 ### Local Development
 1. Clone the repository:
    ```bash
-   git clone https://github.com/3189415066/Academic-Roadmap-3189415066.git
+   git clone https://github.com/YULINYI123/Academic-Roadmap-3189415066.git
    cd Academic-Roadmap-3189415066
    ```
 2. Open `index.html` in any modern web browser
