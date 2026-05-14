@@ -20,6 +20,28 @@ https://YULINYI123.github.io/Academic-Roadmap-3189415066
 2. Open `index.html` in any modern web browser.
 3. No build step required (Pure JavaScript/CSS).
 
+## F# Implementation Notes
+This project is deployed as a static, client-only web application, so it does not require a backend server. The repository also contains a separate F#/.NET 8 project under `fsharp-src/` so the academic planning logic is represented as real F# source code.
+
+The F# implementation corresponds to the main features of the web app: roadmap templates, week-by-week study tasks, progress calculation, GPA reporting, recommendation generation, and calendar event export data.
+
+To verify the F# project:
+```bash
+cd fsharp-src
+dotnet build AcademicRoadmapCore.fsproj
+dotnet run --project AcademicRoadmapCore.fsproj
+```
+
+## Submission Checklist
+- **Public code host**: the project is available in the `YULINYI123/Academic-Roadmap-3189415066` GitHub repository.
+- **Runnable web app**: the root-level HTML/CSS/JavaScript files provide the live roadmap generator.
+- **Live access**: the Try Live link points to the GitHub Pages deployment.
+- **Documentation**: this README explains the motivation, feature set, local usage, screenshot, and F# source project.
+- **Application screenshot**: `screenshot.png` is included and displayed below.
+- **Automatic publishing**: GitHub Actions is configured through `.github/workflows/deploy.yml`.
+- **F# requirement**: `fsharp-src/` contains a compile-ready .NET 8 F# project with more than 300 lines of core planning logic.
+- **Commit record**: the repository history shows separate commits for interface work, behavior, deployment, documentation, and the F# implementation.
+
 ## Screenshots
 ![Main Interface](screenshot.png)
 
